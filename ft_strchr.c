@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 18:01:34 by msloot            #+#    #+#             */
-/*   Updated: 2023/10/24 11:30:04 by msloot           ###   ########.fr       */
+/*   Created: 2023/10/24 11:00:59 by msloot            #+#    #+#             */
+/*   Updated: 2023/10/24 12:02:06 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-size_t	strlen(const char *s)
+char	*ft_strchr(const char *s, int c)
 {
 	size_t	i;
 
 	i = 0;
 	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+			return ((char *)&s[i]);
 		i++;
-	return (i);
+	}
+	if (s[i] == c)
+		return ((char *)&s[i]);
+	return (NULL);
 }
