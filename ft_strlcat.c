@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 11:00:59 by msloot            #+#    #+#             */
-/*   Updated: 2023/10/24 18:03:05 by msloot           ###   ########.fr       */
+/*   Created: 2023/10/24 17:43:49 by msloot            #+#    #+#             */
+/*   Updated: 2023/10/24 18:15:36 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include <sys/types.h>
 
 static size_t	ft_strlen(const char *str)
 {
@@ -23,16 +22,31 @@ static size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-char	*ft_strrchr(const char *s, int c)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	ssize_t	len;
+	size_t	src_i;
+	size_t	dst_i;
+	size_t	src_len;
+	size_t	dst_len;
 
-	len = (ssize_t)ft_strlen((char *)s);
-	while (len >= 0)
+	src_len = ft_strlen(src);
+	if (dst)
+		dst_len = ft_strlen(dst);
+	else
+		dst_len = 0;
+	dst_i = dst_len;
+	src_i = 0;
+	if (dst_len < (size - 1) && size > 0)
 	{
-		if (s[len] == c)
-			return ((char *)&s[len]);
-		len--;
+		while (dst_len + src_i < size - 1 && src[src_i] != '\0')
+		{
+			dst[dst_i] = src[src_i];
+			dst_i++;
+			src_i++;
+		}
+		dst[dst_i] = '\0';
 	}
-	return (NULL);
+	if (dst_len >= size)
+		dst_len = size;
+	return (dst_len + src_len);
 }

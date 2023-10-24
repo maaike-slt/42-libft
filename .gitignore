@@ -1,3 +1,5 @@
 libft.a
+libft.so
+*.out
 obj/
 *~

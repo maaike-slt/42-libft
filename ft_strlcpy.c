@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 11:00:59 by msloot            #+#    #+#             */
-/*   Updated: 2023/10/24 18:03:05 by msloot           ###   ########.fr       */
+/*   Created: 2023/10/24 17:37:15 by msloot            #+#    #+#             */
+/*   Updated: 2023/10/24 17:58:36 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include <sys/types.h>
 
-static size_t	ft_strlen(const char *str)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	if (size > 0)
+	{
+		while (i < (size - 1) && src[i] != '\0')
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
+	}
+	while (src[i] != '\0')
 		i++;
 	return (i);
-}
-
-char	*ft_strrchr(const char *s, int c)
-{
-	ssize_t	len;
-
-	len = (ssize_t)ft_strlen((char *)s);
-	while (len >= 0)
-	{
-		if (s[len] == c)
-			return ((char *)&s[len]);
-		len--;
-	}
-	return (NULL);
 }
