@@ -6,13 +6,13 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 15:17:41 by msloot            #+#    #+#             */
-/*   Updated: 2023/10/26 16:38:27 by msloot           ###   ########.fr       */
+/*   Updated: 2023/10/27 10:29:32 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
- char	*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	unsigned int	i;
 	unsigned int	little_len;

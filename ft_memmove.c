@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 17:08:36 by msloot            #+#    #+#             */
-/*   Updated: 2023/10/27 10:28:35 by msloot           ###   ########.fr       */
+/*   Created: 2023/10/27 15:20:22 by msloot            #+#    #+#             */
+/*   Updated: 2023/10/27 15:34:00 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t	i;
 
 	i = 0;
-	if (!dest && !src && n > 0)
+	if (!dest && !src)
 		return (NULL);
-	while (i < n)
+	if (src < dest)
 	{
-		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-		i++;
+		while (n > 0)
+		{
+			((unsigned char *)dest)[n - 1] = ((unsigned char *)src)[n - 1];
+			n--;
+		}
 	}
-	return (dest);
+	else
+	{
+		while (i < n)
+		{
+			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+			i++;
+		}
+	}
+	return ((unsigned char *)dest);
 }

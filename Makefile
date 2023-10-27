@@ -6,7 +6,7 @@
 #    By: msloot <msloot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:15:16 by msloot            #+#    #+#              #
-#    Updated: 2023/10/26 17:43:54 by msloot           ###   ########.fr        #
+#    Updated: 2023/10/27 15:41:13 by msloot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,8 +49,9 @@ SRC_NAME = \
 	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_strlen.c ft_bzero.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_strlcpy.c ft_strlcat.c ft_strnstr.c \
 	ft_toupper.c ft_tolower.c \
-	ft_memset.c ft_memcpy.c \
+	ft_memset.c ft_memcpy.c ft_memcmp.c ft_memchr.c ft_memmove.c \
 	ft_atoi.c \
+	ft_strdup.c \
 
 SRC =		$(addprefix $(SRC_PATH), $(SRC_NAME))
 # SRC =		$(wildcard $(SRC_PATH)*.c) $(wildcard $(SRC_PATH)**/*.c)
