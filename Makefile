@@ -6,7 +6,7 @@
 #    By: msloot <msloot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:15:16 by msloot            #+#    #+#              #
-#    Updated: 2023/10/27 15:41:13 by msloot           ###   ########.fr        #
+#    Updated: 2023/10/27 16:34:17 by msloot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,8 @@ SRC_NAME = \
 	ft_toupper.c ft_tolower.c \
 	ft_memset.c ft_memcpy.c ft_memcmp.c ft_memchr.c ft_memmove.c \
 	ft_atoi.c \
-	ft_strdup.c \
+	ft_strdup.c ft_calloc.c \
+	ft_strjoin.c \
 
 SRC =		$(addprefix $(SRC_PATH), $(SRC_NAME))
 # SRC =		$(wildcard $(SRC_PATH)*.c) $(wildcard $(SRC_PATH)**/*.c)
