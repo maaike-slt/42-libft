@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 08:58:49 by msloot            #+#    #+#             */
-/*   Updated: 2023/10/27 16:41:45 by msloot           ###   ########.fr       */
+/*   Updated: 2023/10/28 12:01:30 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (!s1 || !s2)
 		return (NULL);
-	ret = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)));
+	ret = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!ret)
 		return (NULL);
 	ret[0] = '\0';
