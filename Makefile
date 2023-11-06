@@ -6,7 +6,7 @@
 #    By: msloot <msloot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:15:16 by msloot            #+#    #+#              #
-#    Updated: 2023/11/06 21:38:12 by msloot           ###   ########.fr        #
+#    Updated: 2023/11/06 21:54:46 by msloot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,10 +64,12 @@ SRC =				$(addprefix $(SRC_PATH), $(SRC_NAME))
 # SRC =				$(wildcard $(SRC_PATH)*.c) $(wildcard $(SRC_PATH)**/*.c)
 #SRC_NAME =			$(subst $(SRC_PATH), , $(SRC))
 
+BONUS_SRC =			$(addprefix $(BONUS_SRC_PATH), $(BONUS_SRC_NAME))
+
 OBJ_NAME =			$(SRC_NAME:.c=.o)
 OBJ =				$(addprefix $(OBJ_PATH), $(OBJ_NAME))
 
-BONUS_OBJ_NAME =	$(BONUS_SRC_NAME.c=.o)
+BONUS_OBJ_NAME =	$(BONUS_SRC_NAME:.c=.o)
 BONUS_OBJ =			$(addprefix $(OBJ_PATH), $(BONUS_OBJ_NAME))
 
 # *************************************************************************** #
