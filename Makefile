@@ -6,7 +6,7 @@
 #    By: msloot <msloot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:15:16 by msloot            #+#    #+#              #
-#    Updated: 2023/10/29 13:09:31 by msloot           ###   ########.fr        #
+#    Updated: 2023/11/06 21:38:12 by msloot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,9 +41,10 @@ D =		$(shell tput sgr0)
 # **************************************************************************** #
 #	SOURCE		#
 
-SRC_PATH =	./
-OBJ_PATH =	./obj/
-INC =		./
+SRC_PATH =			./
+BONUS_SRC_PATH =	./
+OBJ_PATH =			./obj/
+INC =				./
 
 SRC_NAME = \
 	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
@@ -56,18 +57,24 @@ SRC_NAME = \
 	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 	ft_striteri.c ft_strmapi.c \
 
-SRC =		$(addprefix $(SRC_PATH), $(SRC_NAME))
-# SRC =		$(wildcard $(SRC_PATH)*.c) $(wildcard $(SRC_PATH)**/*.c)
-#SRC_NAME =	$(subst $(SRC_PATH), , $(SRC))
+BONUS_SRC_NAME = \
+	ft_lstsize.c \
 
-OBJ_NAME =	$(SRC_NAME:.c=.o)
-OBJ =		$(addprefix $(OBJ_PATH), $(OBJ_NAME))
+SRC =				$(addprefix $(SRC_PATH), $(SRC_NAME))
+# SRC =				$(wildcard $(SRC_PATH)*.c) $(wildcard $(SRC_PATH)**/*.c)
+#SRC_NAME =			$(subst $(SRC_PATH), , $(SRC))
+
+OBJ_NAME =			$(SRC_NAME:.c=.o)
+OBJ =				$(addprefix $(OBJ_PATH), $(OBJ_NAME))
+
+BONUS_OBJ_NAME =	$(BONUS_SRC_NAME.c=.o)
+BONUS_OBJ =			$(addprefix $(OBJ_PATH), $(BONUS_OBJ_NAME))
 
 # *************************************************************************** #
 
 define	progress_bar
 	@i=0
-	@while [[ $$i -le $(words $(SRC)) ]] ; do \
+	@while [[ $$i -le $$(( $(words $(SRC)) + $(words $(BONUS_SRC)) )) ]] ; do \
 		printf " " ; \
 		((i = i + 1)) ; \
 	done
@@ -86,7 +93,16 @@ launch:
 $(NAME):	$(OBJ)
 	$(AR) $(NAME) $(OBJ)
 
+bonus:		launch $(OBJ) $(BONUS_OBJ)
+	$(AR) $(NAME) $(OBJ) $(BONUS_OBJ)
+	@printf "\n$(B)$(MAG)$(NAME) compiled with bonus$(D)\n"
+
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -DNO_BONUS=1 -I$(INC) -c $< -o $@
+	@printf "$(B)$(GRE)█$(D)"
+
+$(OBJ_PATH)%.o: $(BONUS_SRC_PATH)%.c
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
 	@printf "$(B)$(GRE)█$(D)"
@@ -101,9 +117,9 @@ re:			fclean all
 
 # for compilation in dynamic library
 so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ)
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(BONUS_SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJ) $(BONUS_OBJ)
 
-.PHONY: all clean fclean re launch so
+.PHONY: all clean fclean re bonus launch so
 
 # **************************************************************************** #
