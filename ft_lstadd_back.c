@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:13:56 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/07 16:22:09 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/07 19:27:13 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	if (!new)
 		return ;
 	if (!*lst)
-	{
 		*lst = new;
-	}
 	else
+	{
 		tmp = ft_lstlast(*lst);
 		tmp->next = new;
+	}
 }
