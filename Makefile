@@ -6,7 +6,7 @@
 #    By: msloot <msloot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:15:16 by msloot            #+#    #+#              #
-#    Updated: 2023/11/06 21:54:46 by msloot           ###   ########.fr        #
+#    Updated: 2023/11/07 16:22:37 by msloot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,10 +55,10 @@ SRC_NAME = \
 	ft_strdup.c ft_calloc.c \
 	ft_strjoin.c ft_substr.c ft_strtrim.c ft_split.c \
 	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
-	ft_striteri.c ft_strmapi.c \
+	ft_striteri.c ft_strmapi.c ft_lstnew.c ft_lstadd_front.c ft_lstadd_back.c \
 
 BONUS_SRC_NAME = \
-	ft_lstsize.c \
+	ft_lstsize.c ft_lstlast.c \
 
 SRC =				$(addprefix $(SRC_PATH), $(SRC_NAME))
 # SRC =				$(wildcard $(SRC_PATH)*.c) $(wildcard $(SRC_PATH)**/*.c)
