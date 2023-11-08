@@ -6,7 +6,7 @@
 #    By: msloot <msloot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:15:16 by msloot            #+#    #+#              #
-#    Updated: 2023/11/07 19:08:39 by msloot           ###   ########.fr        #
+#    Updated: 2023/11/08 14:01:25 by msloot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,7 @@ SRC_NAME = \
 
 BONUS_SRC_NAME = \
 	ft_lstsize.c ft_lstlast.c ft_lstnew.c ft_lstadd_front.c ft_lstadd_back.c ft_lstiter.c \
-	ft_lstdelone.c ft_lstclear.c \
+	ft_lstdelone.c ft_lstclear.c ft_lstmap.c \
 
 SRC =				$(addprefix $(SRC_PATH), $(SRC_NAME))
 # SRC =				$(wildcard $(SRC_PATH)*.c) $(wildcard $(SRC_PATH)**/*.c)
