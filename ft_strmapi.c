@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 12:03:24 by msloot            #+#    #+#             */
-/*   Updated: 2023/10/28 12:12:03 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/09 21:05:34 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (!s || !f)
 		return (NULL);
-	ret = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
+	ret = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!ret)
 		return (NULL);
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 10:45:35 by msloot            #+#    #+#             */
-/*   Updated: 2023/10/27 11:00:20 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/09 20:58:58 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t				i;
+	size_t	i;
 
 	i = 0;
 	while (i < n)

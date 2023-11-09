@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 17:43:49 by msloot            #+#    #+#             */
-/*   Updated: 2023/10/26 15:13:31 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/09 21:03:54 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		dst_len = 0;
 	dst_i = dst_len;
 	src_i = 0;
-	if (dst_len < (size - 1) && size > 0)
+	if (dst_len < size - 1 && size > 0)
 	{
 		while (dst_len + src_i < size - 1 && src[src_i] != '\0')
 		{

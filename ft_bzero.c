@@ -6,11 +6,11 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 14:30:07 by msloot            #+#    #+#             */
-/*   Updated: 2023/10/26 14:51:49 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/09 20:56:25 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

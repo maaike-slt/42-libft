@@ -6,15 +6,24 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 10:45:44 by msloot            #+#    #+#             */
-/*   Updated: 2023/10/24 12:04:30 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/09 20:55:29 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isnum(int nb)
+#include "libft.h"
+
+static bool	ft_isnum(char c)
 {
-	if (nb >= '0' && nb <= '9')
-		return (1);
-	return (0);
+	if (c >= '0' && c <= '9')
+		return (true);
+	return (false);
+}
+
+static bool	ft_isspace(char c)
+{
+	if ((c > 8 && c < 14) || c == ' ')
+		return (true);
+	return (false);
 }
 
 int	ft_atoi(const char *nptr)
@@ -26,7 +35,7 @@ int	ft_atoi(const char *nptr)
 	i = 0;
 	sign = 1;
 	nb = 0;
-	while ((nptr[i] > 8 && nptr[i] < 14) || nptr[i] == ' ')
+	while (ft_isspace(nptr[i]))
 		i++;
 	if (nptr[i] == '-' || nptr[i] == '+')
 	{
@@ -36,7 +45,7 @@ int	ft_atoi(const char *nptr)
 	}
 	while (nptr[i] != '\0' && ft_isnum(nptr[i]))
 	{
-		nb = nb * 10;
+		nb *= 10;
 		nb += nptr[i] - '0';
 		i++;
 	}
