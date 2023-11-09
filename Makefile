@@ -6,37 +6,16 @@
 #    By: msloot <msloot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:15:16 by msloot            #+#    #+#              #
-#    Updated: 2023/11/08 14:01:25 by msloot           ###   ########.fr        #
+#    Updated: 2023/11/09 21:40:57 by msloot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =	libft.a
 CC = 	cc
-AR =	ar rcs
+AR =	ar crs
 RM = 	rm -rf
 
 CFLAGS =	-Wall -Werror -Wextra
-# CFLAGS +=	-g
-# CFLAGS +=	-fsanitize=address
-# CFLAGS +=	-Wsuggest-attribute=const
-
-# **************************************************************************** #
-#	MAKEFILE	#
-
-MAKEFLAGS += --silent
-
-SHELL := bash
-
-B =		$(shell tput bold)
-BLA =	$(shell tput setaf 0)
-RED =	$(shell tput setaf 1)
-GRE =	$(shell tput setaf 2)
-YEL =	$(shell tput setaf 3)
-BLU =	$(shell tput setaf 4)
-MAG =	$(shell tput setaf 5)
-CYA =	$(shell tput setaf 6)
-WHI =	$(shell tput setaf 7)
-D =		$(shell tput sgr0)
 
 # **************************************************************************** #
 #	SOURCE		#
@@ -62,8 +41,6 @@ BONUS_SRC_NAME = \
 	ft_lstdelone.c ft_lstclear.c ft_lstmap.c \
 
 SRC =				$(addprefix $(SRC_PATH), $(SRC_NAME))
-# SRC =				$(wildcard $(SRC_PATH)*.c) $(wildcard $(SRC_PATH)**/*.c)
-#SRC_NAME =			$(subst $(SRC_PATH), , $(SRC))
 
 BONUS_SRC =			$(addprefix $(BONUS_SRC_PATH), $(BONUS_SRC_NAME))
 
@@ -74,55 +51,32 @@ BONUS_OBJ_NAME =	$(BONUS_SRC_NAME:.c=.o)
 BONUS_OBJ =			$(addprefix $(OBJ_PATH), $(BONUS_OBJ_NAME))
 
 # *************************************************************************** #
-
-define	progress_bar
-	@i=0
-	@while [[ $$i -le $$(( $(words $(SRC)) + $(words $(BONUS_SRC)) )) ]] ; do \
-		printf " " ; \
-		((i = i + 1)) ; \
-	done
-	@printf "$(B)]\r[$(D)"
-endef
-
-# *************************************************************************** #
 #	RULES		#
 
-all:		launch $(NAME)
-	@printf "\n$(B)$(MAG)$(NAME) compiled$(D)\n"
-
-launch:
-	$(call progress_bar)
+all:		$(NAME)
 
 $(NAME):	$(OBJ)
 	$(AR) $(NAME) $(OBJ)
 
-bonus:		launch $(OBJ) $(BONUS_OBJ)
+bonus:		$(OBJ) $(BONUS_OBJ)
 	$(AR) $(NAME) $(OBJ) $(BONUS_OBJ)
-	@printf "\n$(B)$(MAG)$(NAME) compiled with bonus$(D)\n"
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -DNO_BONUS=1 -I$(INC) -c $< -o $@
-	@printf "$(B)$(GRE)█$(D)"
 
 $(OBJ_PATH)%.o: $(BONUS_SRC_PATH)%.c
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
-	@printf "$(B)$(GRE)█$(D)"
 
 clean:
-	@$(RM) $(OBJ_PATH)
+	$(RM) $(OBJ_PATH)
 
 fclean:		clean
-	@$(RM) $(NAME)
+	$(RM) $(NAME)
 
 re:			fclean all
 
-# for compilation in dynamic library
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(BONUS_SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ) $(BONUS_OBJ)
-
-.PHONY: all clean fclean re bonus launch so
+.PHONY: all clean fclean re bonus
 
 # **************************************************************************** #
