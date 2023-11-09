@@ -6,7 +6,7 @@
 #    By: msloot <msloot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:15:16 by msloot            #+#    #+#              #
-#    Updated: 2023/11/08 14:01:25 by msloot           ###   ########.fr        #
+#    Updated: 2023/11/09 21:48:03 by msloot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,10 +41,10 @@ D =		$(shell tput sgr0)
 # **************************************************************************** #
 #	SOURCE		#
 
-SRC_PATH =			./
-BONUS_SRC_PATH =	./
+SRC_PATH =			./src/
+BONUS_SRC_PATH =	./src/
 OBJ_PATH =			./obj/
-INC =				./
+INC =				./inc/
 
 SRC_NAME = \
 	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
@@ -118,11 +118,6 @@ fclean:		clean
 
 re:			fclean all
 
-# for compilation in dynamic library
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(BONUS_SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ) $(BONUS_OBJ)
-
-.PHONY: all clean fclean re bonus launch so
+.PHONY: all clean fclean re bonus launch
 
 # **************************************************************************** #
