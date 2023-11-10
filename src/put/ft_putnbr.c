@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 21:38:21 by msloot            #+#    #+#             */
+/*   Created: 2023/11/10 22:16:37 by msloot            #+#    #+#             */
 /*   Updated: 2023/11/10 22:18:09 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline void	ft_putstr(const char *s)
+inline void	ft_putnbr(int n)
 {
-	return (ft_putstr_fd(s, STDOUT_FILENO));
+    return (ft_putnbr_fd(n, STDIN_FILENO));
 }
