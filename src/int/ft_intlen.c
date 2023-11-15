@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_in_str.c                                     :+:      :+:    :+:   */
+/*   ft_intlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 17:19:25 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/13 17:20:08 by msloot           ###   ########.fr       */
+/*   Created: 2023/11/15 12:29:36 by msloot            #+#    #+#             */
+/*   Updated: 2023/11/15 13:27:12 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static bool	is_c_in_str(const char *str, char c)
+#include "libft.h"
+
+size_t	ft_intlen(int n)
 {
 	size_t	i;
 
+	if (n == 0)
+		return (1);
 	i = 0;
-	while (str[i] != '\0')
+	if (n < 0)
+		i++;
+	while (n != 0)
 	{
-		if (str[i] == c)
-			return (true);
+		n /= 10;
 		i++;
 	}
-	return (false);
+	return (i);
 }
