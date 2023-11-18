@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 10:55:10 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/18 18:45:46 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/18 19:06:24 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ssize_t	ft_putnbr_base(ssize_t n, const char *base)
 {
-	char	str[12];
+	char	str[12];	// TODO: malloc
 	size_t	base_len;
 
 	base_len = ft_check_base(base);
