@@ -1,48 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_nbrlen_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/29 12:31:06 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/19 19:22:36 by adelille         ###   ########.fr       */
+/*   Created: 2023/11/15 17:47:00 by msloot            #+#    #+#             */
+/*   Updated: 2023/11/19 19:17:57 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+// will crash if base is 0 which is not protected for optimization reasons
+// it is the responsibility of the dev to use ft_check_base() != 0 beforehand
+size_t	ft_nbrlen_base(ssize_t n, size_t base)
 {
-	char	*ret;
-	size_t	len;
+	size_t	i;
 
-	len = ft_nbrlen(n);
-	ret = (char *)malloc(sizeof(char) * (len + 1));
-	if (!ret)
-		return (NULL);
-	return (ft_nbrcpy(ret, n));
+	if (n == 0)
+		return (1);
+	i = 0;
+	if (n < 0)
+		i++;
+	while (n != 0)
+	{
+		n /= (ssize_t)base;
+		i++;
+	}
+	return (i);
 }
-
-/*
-#include <stdio.h>
-#include <limits.h>
-
-static void	test(int n)
-{
-	printf("%d:\t'%s'\n", n, ft_itoa(n));
-}
-
-int	main(void)
-{
-	test(0);
-	test(1);
-	test(-1);
-	test(42);
-	test(-42);
-	test(4242);
-	test(-4242);
-	test(INT_MAX);
-	test(INT_MIN);
-}
-*/

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_ntoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 12:31:06 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/19 19:22:36 by adelille         ###   ########.fr       */
+/*   Updated: 2023/11/19 19:22:54 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+char	*ft_ntoa(ssize_t n)
 {
 	char	*ret;
 	size_t	len;
@@ -23,26 +23,3 @@ char	*ft_itoa(int n)
 		return (NULL);
 	return (ft_nbrcpy(ret, n));
 }
-
-/*
-#include <stdio.h>
-#include <limits.h>
-
-static void	test(int n)
-{
-	printf("%d:\t'%s'\n", n, ft_itoa(n));
-}
-
-int	main(void)
-{
-	test(0);
-	test(1);
-	test(-1);
-	test(42);
-	test(-42);
-	test(4242);
-	test(-4242);
-	test(INT_MAX);
-	test(INT_MIN);
-}
-*/

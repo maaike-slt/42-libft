@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 14:56:09 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/18 18:45:50 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/19 19:36:08 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ size_t	ft_strlen(const char *s);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 
-size_t	ft_intlen(ssize_t n);
-size_t	ft_intlen_base(ssize_t n, size_t base);
+size_t	ft_nbrlen(ssize_t n);
+size_t	ft_nbrlen_base(ssize_t n, size_t base);
 
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
@@ -48,10 +48,15 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 
+typedef struct s_base {
+	const char	*base;
+	size_t		len;
+}	t_base;
+
 int		ft_atoi(const char *nptr);
 char	*ft_itoa(int n);
-char	*ft_intcpy(char *dst, ssize_t n);
-char	*ft_intcpy_base(char *dst, ssize_t n, const char *base, size_t base_len);
+char	*ft_nbrcpy(char *dst, ssize_t n);
+char	*ft_nbrcpy_base(char *dst, ssize_t n, const char *base, size_t base_len);
 size_t	ft_check_base(const char *base);
 
 char	*ft_strdup(const char *s);

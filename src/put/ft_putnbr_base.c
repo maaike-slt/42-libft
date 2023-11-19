@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 10:55:10 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/18 19:06:24 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/19 19:18:11 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ ssize_t	ft_putnbr_base(ssize_t n, const char *base)
 	base_len = ft_check_base(base);
 	if (base_len == 0)
 		return (-16);
-	ft_intcpy_base(str, n, base, base_len);
+	ft_nbrcpy_base(str, n, base, base_len);
 	return (ft_putstr(str));
 }
