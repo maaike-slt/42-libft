@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 14:56:09 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/19 19:36:08 by adelille         ###   ########.fr       */
+/*   Updated: 2023/11/20 21:38:53 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,10 @@ size_t	ft_strlen(const char *s);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 
-size_t	ft_nbrlen(ssize_t n);
 size_t	ft_nbrlen_base(ssize_t n, size_t base);
+size_t	ft_unbrlen_base(size_t n, size_t base);
+size_t	ft_nbrlen(ssize_t n);
+size_t	ft_unbrlen(size_t n);
 
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
@@ -55,8 +57,27 @@ typedef struct s_base {
 
 int		ft_atoi(const char *nptr);
 char	*ft_itoa(int n);
-char	*ft_nbrcpy(char *dst, ssize_t n);
-char	*ft_nbrcpy_base(char *dst, ssize_t n, const char *base, size_t base_len);
+
+char	*ft_ntoa_base(ssize_t n, const t_base *b);
+char	*ft_untoa_base(size_t n, const t_base *b);
+char	*ft_ntoa(ssize_t n);
+char	*ft_untoa(size_t n);
+
+char	*ft_nbr_convert_base(
+			char *dst,
+			ssize_t n,
+			size_t n_len,
+			const t_base *b
+			);
+char	*ft_unbr_convert_base(
+			char *dst,
+			size_t n,
+			size_t n_len,
+			const t_base *b
+			);
+char	*ft_nbr_convert(char *dst, ssize_t n, size_t n_len);
+char	*ft_unbr_convert(char *dst, size_t n, size_t n_len);
+
 size_t	ft_check_base(const char *base);
 
 char	*ft_strdup(const char *s);

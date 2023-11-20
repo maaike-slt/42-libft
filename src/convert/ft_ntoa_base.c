@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_intcpy.c                                        :+:      :+:    :+:   */
+/*   ft_ntoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/15 18:12:40 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/18 18:45:48 by msloot           ###   ########.fr       */
+/*   Created: 2023/10/29 12:31:06 by msloot            #+#    #+#             */
+/*   Updated: 2023/11/20 21:39:26 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline char	*ft_intcpy(char *dst, ssize_t n)
+char	*ft_ntoa_base(ssize_t n, const t_base *b)
 {
-	return (ft_intcpy_base(dst, n, "0123456789", 10));
+	char	*ret;
+	size_t	n_len;
+
+	n_len = ft_nbrlen_base(n, b->len);
+	ret = (char *)malloc(sizeof(char) * (n_len + 1));
+	if (!ret)
+		return (NULL);
+	return (ft_nbr_convert_base(ret, n, n_len, b));
 }

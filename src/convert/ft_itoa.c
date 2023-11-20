@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 12:31:06 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/19 19:22:36 by adelille         ###   ########.fr       */
+/*   Updated: 2023/11/20 21:35:49 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 char	*ft_itoa(int n)
 {
 	char	*ret;
-	size_t	len;
+	size_t	n_len;
 
-	len = ft_nbrlen(n);
-	ret = (char *)malloc(sizeof(char) * (len + 1));
+	n_len = ft_nbrlen(n);
+	ret = (char *)malloc(sizeof(char) * (n_len + 1));
 	if (!ret)
 		return (NULL);
-	return (ft_nbrcpy(ret, n));
+	return (ft_nbr_convert(ret, n, n_len));
 }
 
 /*

@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:15:16 by msloot            #+#    #+#              #
-#    Updated: 2023/11/19 19:16:00 by adelille         ###   ########.fr        #
+#    Updated: 2023/11/20 21:36:53 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,10 @@ SRC_NAME = \
 	nbr/ft_nbrlen.c nbr/ft_nbrlen_base.c \
 	mem/ft_bzero.c mem/ft_memset.c mem/ft_memcpy.c mem/ft_memcmp.c mem/ft_memchr.c mem/ft_memmove.c \
 	convert/ft_atoi.c convert/ft_itoa.c \
-	convert/ft_nbrcpy.c convert/ft_nbrcpy_base.c \
+	convert/ft_ntoa_base.c convert/ft_ntoa.c \
+	convert/ft_untoa_base.c convert/ft_untoa.c \
+	convert/ft_nbr_convert_base.c convert/ft_nbr_convert.c \
+	convert/ft_unbr_convert_base.c convert/ft_unbr_convert.c \
 	convert/ft_check_base.c \
 	str/ft_strdup.c mem/ft_calloc.c \
 	str/ft_strjoin.c str/ft_substr.c str/ft_strtrim.c str/ft_split.c \

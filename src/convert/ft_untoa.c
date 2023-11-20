@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_uintcpy.c                                       :+:      :+:    :+:   */
+/*   ft_untoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/15 18:12:40 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/19 19:17:45 by adelille         ###   ########.fr       */
+/*   Created: 2023/11/20 21:27:41 by adelille          #+#    #+#             */
+/*   Updated: 2023/11/20 21:34:16 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline char	*ft_unbrcpy(char *dst, size_t n)
+char	*ft_untoa(size_t n)
 {
-	return (ft_unbrcpy_base(dst, n, "0123456789", 10));
+	return (ft_untoa_base(n, &(t_base){"0123456789", 10}));
 }

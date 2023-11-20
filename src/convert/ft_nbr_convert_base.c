@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 18:10:20 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/19 19:51:45 by adelille         ###   ########.fr       */
+/*   Updated: 2023/11/20 21:22:09 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,15 @@ char	*ft_nbr_convert_base(
 	n_len--;
 	if (n < 0)
 	{
-		n = -n;
+		un = -n;
 		dst[0] = '-';
 	}
-	while (n != 0)
+	else
+		un = n;
+	while (un != 0)
 	{
-		dst[n_len] = b->base[n % b->len];
-		n /= b->len;
+		dst[n_len] = b->base[un % b->len];
+		un /= b->len;
 		n_len--;
 	}
 	return (dst);
