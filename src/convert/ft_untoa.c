@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 21:27:41 by adelille          #+#    #+#             */
-/*   Updated: 2023/11/20 21:34:16 by adelille         ###   ########.fr       */
+/*   Updated: 2023/11/20 21:55:39 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 char	*ft_untoa(size_t n)
 {
-	return (ft_untoa_base(n, &(t_base){"0123456789", 10}));
+	return (ft_untoa_base(n, &(t_base){B10, B10_LEN}));
 }

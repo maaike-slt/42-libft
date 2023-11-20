@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 14:56:09 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/20 21:38:53 by adelille         ###   ########.fr       */
+/*   Updated: 2023/11/20 22:03:21 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,17 @@ typedef struct s_base {
 	size_t		len;
 }	t_base;
 
+# define B2			"01"
+# define B2_LEN		2
+# define B8			"01234567"
+# define B8_LEN		8
+# define B10		"0123456789"
+# define B10_LEN	10
+# define B16		"0123456789abcdef"
+# define B16_LEN	16
+# define B16X		"0123456789ABCDEF"
+# define B16X_LEN	16
+
 int		ft_atoi(const char *nptr);
 char	*ft_itoa(int n);
 
@@ -93,9 +104,16 @@ ssize_t	ft_putchar(char c);
 ssize_t	ft_putstr_fd(const char *s, int fd);
 ssize_t	ft_putstr(const char *s);
 ssize_t	ft_putendl_fd(const char *s, int fd);
+
+ssize_t	ft_putnbr_base_fd(ssize_t n, const t_base *base, int fd);
+ssize_t	ft_putnbr_base(ssize_t n, const t_base *base);
 ssize_t	ft_putnbr_fd(ssize_t n, int fd);
 ssize_t	ft_putnbr(ssize_t n);
-ssize_t	ft_putnbr_base(ssize_t n, const char *base);
+
+ssize_t	ft_putunbr_base_fd(size_t n, const t_base *base, int fd);
+ssize_t	ft_putunbr_base(size_t n, const t_base *base);
+ssize_t	ft_putunbr_fd(size_t n, int fd);
+ssize_t	ft_putunbr(size_t n);
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
