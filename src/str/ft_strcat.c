@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 11:00:59 by msloot            #+#    #+#             */
-/*   Updated: 2024/03/04 16:13:44 by msloot           ###   ########.fr       */
+/*   Created: 2023/09/27 08:58:49 by msloot            #+#    #+#             */
+/*   Updated: 2024/03/04 17:32:23 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-char	*ft_strchr(const char *s, char c)
+char	*ft_strcat(char *dest, const char *src)
 {
 	size_t	i;
+	size_t	dest_len;
 
 	i = 0;
-	while (s[i] != '\0')
+	dest_len = ft_strlen(dest);
+	while (src[i] != '\0')
 	{
-		if (s[i] == c)
-			return ((char *)&s[i]);
+		dest[dest_len] = src[i];
 		i++;
+		dest_len++;
 	}
-	if (s[i] == c)
-		return ((char *)&s[i]);
-	return (NULL);
+	dest[dest_len] = '\0';
+	return (dest);
 }

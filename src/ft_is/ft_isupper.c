@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_isupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 11:00:59 by msloot            #+#    #+#             */
-/*   Updated: 2024/03/04 16:13:44 by msloot           ###   ########.fr       */
+/*   Created: 2024/03/04 16:14:41 by msloot            #+#    #+#             */
+/*   Updated: 2024/03/04 16:16:19 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-char	*ft_strchr(const char *s, char c)
+bool	ft_isupper(char c)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == c)
-			return ((char *)&s[i]);
-		i++;
-	}
-	if (s[i] == c)
-		return ((char *)&s[i]);
-	return (NULL);
+	return (c >= 'A' && c <= 'Z');
 }
