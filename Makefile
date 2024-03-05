@@ -6,7 +6,7 @@
 #    By: msloot <msloot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:15:16 by msloot            #+#    #+#              #
-#    Updated: 2023/11/21 20:07:22 by msloot           ###   ########.fr        #
+#    Updated: 2024/03/04 17:19:12 by msloot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,9 @@ INC =				./inc/
 
 SRC_NAME = \
 	ft_is/ft_isalpha.c ft_is/ft_isdigit.c ft_is/ft_isalnum.c ft_is/ft_isascii.c ft_is/ft_isprint.c ft_is/ft_is_in.c \
-	str/ft_strlen.c str/ft_strchr.c str/ft_strrchr.c str/ft_strncmp.c str/ft_strlcpy.c str/ft_strlcat.c str/ft_strnstr.c \
+	ft_is/ft_isupper.c ft_is/ft_islower.c \
+	str/ft_strlen.c str/ft_strchr.c str/ft_strrchr.c str/ft_strcmp.c str/ft_strncmp.c str/ft_strcpy.c str/ft_strlcpy.c \
+	str/ft_strlcat.c str/ft_strnstr.c \
 	str/ft_toupper.c str/ft_tolower.c \
 	nbr/ft_nbrlen.c nbr/ft_nbrlen_base.c \
 	nbr/ft_unbrlen.c nbr/ft_unbrlen_base.c \
@@ -68,6 +70,7 @@ SRC_NAME = \
 	str/ft_striteri.c str/ft_strmapi.c \
 	lst/ft_lstsize.c lst/ft_lstlast.c lst/ft_lstnew.c lst/ft_lstadd_front.c lst/ft_lstadd_back.c lst/ft_lstiter.c \
 	lst/ft_lstdelone.c lst/ft_lstclear.c lst/ft_lstmap.c \
+	gnl/get_next_line.c gnl/get_next_line_utils.c \
 
 SRC =				$(addprefix $(SRC_PATH), $(SRC_NAME))
 # SRC =				$(wildcard $(SRC_PATH)*.c) $(wildcard $(SRC_PATH)**/*.c)

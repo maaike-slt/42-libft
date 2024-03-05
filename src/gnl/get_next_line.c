@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/23 12:40:27 by msloot            #+#    #+#             */
-/*   Updated: 2024/01/14 17:16:13 by msloot           ###   ########.fr       */
+/*   Created: 2024/03/05 16:56:45 by msloot            #+#    #+#             */
+/*   Updated: 2024/03/05 17:00:34 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,23 +83,23 @@ static char	*find_line(char *buffer, int fd)
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer = NULL;
+	static char	*buffer[FD_SIZE];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || fd >= FD_SIZE || BUFFER_SIZE <= 0)
 		return (NULL);
-	if (buffer == NULL)
+	if (buffer[fd] == NULL)
 	{
-		buffer = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
-		if (!buffer)
+		buffer[fd] = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
+		if (!buffer[fd])
 			return (NULL);
-		buffer[0] = '\0';
+		buffer[fd][0] = '\0';
 	}
-	line = find_line(buffer, fd);
+	line = find_line(buffer[fd], fd);
 	if (!line)
 	{
-		free(buffer);
-		buffer = NULL;
+		free(buffer[fd]);
+		buffer[fd] = NULL;
 	}
 	return (line);
 }

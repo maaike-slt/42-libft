@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 14:56:09 by msloot            #+#    #+#             */
-/*   Updated: 2023/12/31 16:48:24 by msloot           ###   ########.fr       */
+/*   Updated: 2024/03/05 16:51:25 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE	4096
+# endif
+
+# ifndef FD_SIZE
+#  define FD_SIZE	1024
 # endif
 
 # include <unistd.h>
