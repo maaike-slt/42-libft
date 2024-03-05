@@ -6,7 +6,7 @@
 #    By: msloot <msloot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:15:16 by msloot            #+#    #+#              #
-#    Updated: 2024/03/04 17:19:12 by msloot           ###   ########.fr        #
+#    Updated: 2024/03/05 17:18:23 by msloot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,7 @@ SRC_NAME = \
 	convert/ft_unbr_convert_base.c convert/ft_unbr_convert.c \
 	convert/ft_check_base.c \
 	str/ft_strdup.c mem/ft_calloc.c \
-	str/ft_strjoin.c str/ft_substr.c str/ft_strtrim.c str/ft_split.c \
+	str/ft_strjoin.c str/ft_strjoin_free.c str/ft_substr.c str/ft_strtrim.c str/ft_split.c \
 	put/ft_putchar_fd.c put/ft_putchar.c put/ft_putstr_fd.c put/ft_putstr.c put/ft_putendl_fd.c \
 	put/ft_putnbr_base_fd.c put/ft_putnbr_base.c \
 	put/ft_putnbr_fd.c put/ft_putnbr.c \
@@ -70,7 +70,7 @@ SRC_NAME = \
 	str/ft_striteri.c str/ft_strmapi.c \
 	lst/ft_lstsize.c lst/ft_lstlast.c lst/ft_lstnew.c lst/ft_lstadd_front.c lst/ft_lstadd_back.c lst/ft_lstiter.c \
 	lst/ft_lstdelone.c lst/ft_lstclear.c lst/ft_lstmap.c \
-	gnl/get_next_line.c gnl/get_next_line_utils.c \
+	gnl/get_next_line.c \
 
 SRC =				$(addprefix $(SRC_PATH), $(SRC_NAME))
 # SRC =				$(wildcard $(SRC_PATH)*.c) $(wildcard $(SRC_PATH)**/*.c)

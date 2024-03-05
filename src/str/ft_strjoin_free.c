@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   ft_strjoin_free.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/30 18:51:33 by msloot            #+#    #+#             */
-/*   Updated: 2024/03/05 16:53:33 by msloot           ###   ########.fr       */
+/*   Created: 2024/03/05 17:12:16 by msloot            #+#    #+#             */
+/*   Updated: 2024/03/05 17:12:29 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 char	*ft_strjoin_free(char *s1, char *s2, bool free_s1, bool free_s2)
 {

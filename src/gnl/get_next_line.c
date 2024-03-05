@@ -6,11 +6,12 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 16:56:45 by msloot            #+#    #+#             */
-/*   Updated: 2024/03/05 17:00:34 by msloot           ###   ########.fr       */
+/*   Updated: 2024/03/05 17:17:47 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include "libft.h"
 
 static ssize_t	first_newline(const char *buffer)
 {
