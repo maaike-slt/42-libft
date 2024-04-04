@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 20:11:09 by msloot            #+#    #+#             */
-/*   Updated: 2024/04/04 20:47:11 by msloot           ###   ########.fr       */
+/*   Updated: 2024/04/04 21:01:17 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ ssize_t	count_line(const char *path)
 		count++;
 		line = get_next_line(fd);
 	}
+	close(fd);
 	return (count);
 }
 
