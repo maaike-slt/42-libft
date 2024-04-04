@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 14:56:09 by msloot            #+#    #+#             */
-/*   Updated: 2024/03/17 18:41:07 by msloot           ###   ########.fr       */
+/*   Updated: 2024/04/04 20:48:08 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,5 +157,11 @@ t_vec	*
 */
 
 char		*get_next_line(int fd);
+
+# ifdef	WITH_OPEN
+
+ssize_t		count_line(const char *path);
+
+# endif
 
 #endif
