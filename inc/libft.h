@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 14:56:09 by msloot            #+#    #+#             */
-/*   Updated: 2024/05/12 15:55:49 by msloot           ###   ########.fr       */
+/*   Updated: 2024/05/12 17:23:36 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,12 @@ bool		ft_isalnum(char c);
 bool		ft_isalpha(char c);
 bool		ft_isascii(int c);
 bool		ft_isdigit(char c);
-bool		ft_isdigit_str(char *str);
 bool		ft_isspace(char c);
 bool		ft_isprint(char c);
 bool		ft_islower(char c);
 bool		ft_isupper(char c);
+bool		ft_is_all(const char *str, bool (*f)(char));
+bool		ft_is_any(const char *str, bool (*f)(char));
 bool		ft_is_in(const char *str, char c);
 
 void		ft_bzero(void *s, size_t n);
@@ -66,6 +67,7 @@ void		*ft_memchr(const void *s, char c, size_t n);
 void		*ft_memmove(void *dst, const void *src, size_t n);
 
 void		ft_free_2d(void ***arr, size_t size);
+size_t		ft_2d_size(const void **ptr);
 
 typedef struct s_base
 {
