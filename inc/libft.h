@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 14:56:09 by msloot            #+#    #+#             */
-/*   Updated: 2024/05/05 15:30:51 by msloot           ###   ########.fr       */
+/*   Updated: 2024/05/12 15:55:49 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ bool		ft_isalnum(char c);
 bool		ft_isalpha(char c);
 bool		ft_isascii(int c);
 bool		ft_isdigit(char c);
+bool		ft_isdigit_str(char *str);
 bool		ft_isspace(char c);
 bool		ft_isprint(char c);
 bool		ft_islower(char c);
@@ -82,6 +83,8 @@ typedef struct s_base
 # define B16X "0123456789ABCDEF"
 # define B16_LEN 16
 
+# define WHITESPACE " \n\t\r\v\f"
+
 int			ft_atoi(const char *nptr);
 int			ft_atoi_digits_only(const char *nptr);
 char		*ft_itoa(int n);
@@ -115,6 +118,8 @@ char		*ft_strjoin_free(char *s1, char *s2, bool free_s1, bool free_s2);
 char		*ft_substr(char const *s, size_t start, size_t len);
 char		*ft_strtrim(char const *s1, char const *set);
 char		**ft_split(char const *s, char c);
+char		**ft_split_any_of(char const *str, char *sep);
+char		**ft_split_whitespace(char const *str);
 
 ssize_t		ft_putchar_fd(char c, int fd);
 ssize_t		ft_putchar(char c);

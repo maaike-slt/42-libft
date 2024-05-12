@@ -6,7 +6,7 @@
 #    By: msloot <msloot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:15:16 by msloot            #+#    #+#              #
-#    Updated: 2024/05/05 15:31:41 by msloot           ###   ########.fr        #
+#    Updated: 2024/05/12 15:56:13 by msloot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ OBJ_PATH =			./obj/
 INC =				./inc/
 
 SRC_NAME = \
-	ft_is/ft_isalpha.c ft_is/ft_isdigit.c ft_is/ft_isalnum.c \
+	ft_is/ft_isalpha.c ft_is/ft_isdigit.c ft_is/ft_isdigit_str.c ft_is/ft_isalnum.c \
 	ft_is/ft_isascii.c ft_is/ft_isprint.c ft_is/ft_isspace.c \
 	ft_is/ft_is_in.c ft_is/ft_isupper.c ft_is/ft_islower.c \
 	str/ft_strlen.c str/ft_strchr.c str/ft_strrchr.c str/ft_strcmp.c str/ft_strncmp.c str/ft_strcpy.c str/ft_strlcpy.c \
@@ -55,14 +55,15 @@ SRC_NAME = \
 	nbr/ft_nbrlen.c nbr/ft_nbrlen_base.c \
 	nbr/ft_unbrlen.c nbr/ft_unbrlen_base.c \
 	mem/ft_bzero.c mem/ft_memset.c mem/ft_memcpy.c mem/ft_memcmp.c mem/ft_memchr.c mem/ft_memmove.c mem/ft_free_2d.c\
-	convert/ft_atoi.c convert/ft_atoi_digits_only.c convert/ft_itoa.c \
+	convert/ft_atoi.c convert/ft_atoi_digits_only.c  convert/ft_itoa.c \
 	convert/ft_ntoa_base.c convert/ft_ntoa.c \
 	convert/ft_untoa_base.c convert/ft_untoa.c \
 	convert/ft_nbr_convert_base.c convert/ft_nbr_convert.c \
 	convert/ft_unbr_convert_base.c convert/ft_unbr_convert.c \
 	convert/ft_check_base.c \
 	str/ft_strdup.c str/ft_strndup.c mem/ft_calloc.c \
-	str/ft_strjoin.c str/ft_strjoin_free.c str/ft_substr.c str/ft_strtrim.c str/ft_split.c \
+	str/ft_strjoin.c str/ft_strjoin_free.c str/ft_substr.c str/ft_strtrim.c \
+	str/ft_split.c str/ft_split_any_of.c str/ft_split_whitespace.c \
 	put/ft_putchar_fd.c put/ft_putchar.c put/ft_putstr_fd.c put/ft_putstr.c put/ft_putendl_fd.c put/ft_puterr.c \
 	put/ft_putnbr_base_fd.c put/ft_putnbr_base.c \
 	put/ft_putnbr_fd.c put/ft_putnbr.c \
