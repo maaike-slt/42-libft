@@ -6,13 +6,13 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 10:45:44 by msloot            #+#    #+#             */
-/*   Updated: 2024/05/13 20:36:50 by msloot           ###   ########.fr       */
+/*   Updated: 2024/05/13 20:40:25 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_atoi(const char *nptr)
+size_t	ft_atoun(const char *nptr)
 {
 	size_t	i;
 	size_t	sign;
