@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_2d_free.c                                       :+:      :+:    :+:   */
+/*   ft_strpush.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/17 18:20:30 by msloot            #+#    #+#             */
-/*   Updated: 2024/12/07 19:52:27 by msloot           ###   ########.fr       */
+/*   Created: 2024/12/07 19:56:50 by msloot            #+#    #+#             */
+/*   Updated: 2024/12/07 20:01:02 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_2d_free(void ***arr, size_t size)
+char	*ft_strpush(char **str, char c)
 {
-	size_t	i;
+	size_t	len;
+	char	*new;
 
-	if (!arr || !*arr)
-		return ;
-	i = 0;
-	while (i < size)
-	{
-		free((*arr)[i]);
-		(*arr)[i] = NULL;
-		i++;
-	}
-	free(*arr);
-	*arr = NULL;
+	if (!str || !*str)
+		return (ft_strndup(&c, 1));
+	len = ft_strlen(*str);
+	new = (char *)malloc(sizeof(char) * (len + 2));
+	if (!new)
+		return (NULL);
+	ft_strcpy(new, *str);
+	new[len] = c;
+	new[len + 1] = '\0';
+	free(*str);
+	*str = new;
+	return (*str);
 }

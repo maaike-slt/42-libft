@@ -6,7 +6,7 @@
 #    By: msloot <msloot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:15:16 by msloot            #+#    #+#              #
-#    Updated: 2024/12/07 19:42:36 by msloot           ###   ########.fr        #
+#    Updated: 2024/12/07 20:00:02 by msloot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,7 +82,7 @@ SRC_NAME = \
 	convert/ft_nbr_convert_base.c convert/ft_nbr_convert.c \
 	convert/ft_unbr_convert_base.c convert/ft_unbr_convert.c \
 	convert/ft_check_base.c \
-	str/ft_strdup.c str/ft_strndup.c mem/ft_calloc.c \
+	str/ft_strpush.c str/ft_strdup.c str/ft_strndup.c mem/ft_calloc.c \
 	str/ft_strjoin.c str/ft_strjoin_free.c str/ft_substr.c str/ft_strtrim.c \
 	str/ft_split.c str/ft_split_any_of.c str/ft_split_whitespace.c \
 	put/ft_putchar_fd.c put/ft_putchar.c put/ft_putstr_fd.c put/ft_putstr.c put/ft_putendl_fd.c put/ft_puterr.c \

@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 14:56:09 by msloot            #+#    #+#             */
-/*   Updated: 2024/12/07 19:43:11 by msloot           ###   ########.fr       */
+/*   Updated: 2024/12/07 20:01:04 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,7 @@ char		*ft_unbr_convert(char *dst, size_t n, size_t n_len);
 
 size_t		ft_check_base(const char *base);
 
+char		*ft_strpush(char **str, char c);
 char		*ft_strdup(const char *s);
 char		*ft_strndup(const char *s, size_t n);
 void		*ft_calloc(size_t nmemb, size_t size);
