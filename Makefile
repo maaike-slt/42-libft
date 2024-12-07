@@ -6,7 +6,7 @@
 #    By: msloot <msloot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:15:16 by msloot            #+#    #+#              #
-#    Updated: 2024/12/05 21:28:06 by msloot           ###   ########.fr        #
+#    Updated: 2024/12/07 19:42:36 by msloot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,7 +74,8 @@ SRC_NAME = \
 	nbr/ft_nbrlen.c nbr/ft_nbrlen_base.c \
 	nbr/ft_unbrlen.c nbr/ft_unbrlen_base.c \
 	mem/ft_bzero.c mem/ft_memset.c mem/ft_memcpy.c mem/ft_memcmp.c mem/ft_memchr.c mem/ft_memmove.c \
-	mem/ft_free_2d.c mem/ft_2d_size.c mem/ft_2d_pop.c mem/ft_2d_drop.c mem/ft_2d_push.c \
+	2d/ft_2d_size.c 2d/ft_2d_pop.c 2d/ft_2d_drop.c 2d/ft_2d_push.c \
+	2d/ft_2d_free.c 2d/ft_2d_size.c \
 	convert/ft_atoi.c convert/ft_aton.c convert/ft_atoun.c convert/ft_atoi_digits_only.c  convert/ft_itoa.c \
 	convert/ft_ntoa_base.c convert/ft_ntoa.c \
 	convert/ft_untoa_base.c convert/ft_untoa.c \
