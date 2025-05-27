@@ -6,19 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 14:56:09 by msloot            #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2024/12/08 17:32:20 by msloot           ###   ########.fr       */
-||||||| 28790c7
-<<<<<<< HEAD
-/*   Updated: 2024/12/08 17:32:20 by msloot           ###   ########.fr       */
-||||||| e87b200
-/*   Updated: 2024/12/05 21:56:18 by msloot           ###   ########.fr       */
-=======
-/*   Updated: 2024/12/07 20:01:04 by msloot           ###   ########.fr       */
->>>>>>> 36fdb5364993ef5d20104597af44e207399ae545
-=======
-/*   Updated: 2025/02/02 16:20:38 by msloot           ###   ########.fr       */
->>>>>>> f9d19530c510cc75d4efb3158900ef56f8a1032f
+/*   Updated: 2025/05/27 22:33:14 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +60,8 @@ size_t		ft_umin(size_t a, size_t b);
 ssize_t		ft_min(ssize_t a, ssize_t b);
 size_t		ft_umax(size_t a, size_t b);
 ssize_t		ft_max(ssize_t a, ssize_t b);
+ssize_t		ft_pow(ssize_t	x, size_t y);
+float		ft_powf(float x, size_t y);
 size_t		ft_nbrlen_base(ssize_t n, size_t base);
 size_t		ft_unbrlen_base(size_t n, size_t base);
 size_t		ft_nbrlen(ssize_t n);
@@ -110,6 +100,7 @@ typedef struct s_base
 int			ft_atoi(const char *nptr);
 ssize_t		ft_aton(const char *nptr);
 size_t		ft_atoun(const char *nptr);
+float		ft_atof(const char *nptr);
 int			ft_atoi_digits_only(const char *nptr);
 char		*ft_itoa(int n);
 
